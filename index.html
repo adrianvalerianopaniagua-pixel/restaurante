@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#251b18">
+    <title>El Buen Sabor | Iniciar sesión</title>
+    <link rel="stylesheet" href="css/stylelogin.css">
+</head>
+<body>
+    <main class="login">
+        <section class="login__presentacion">
+            <div class="marca">
+                <span class="marca__icono">🍗</span>
+                <span>EL BUEN SABOR</span>
+            </div>
+            <div class="presentacion__texto">
+                <p class="etiqueta">POLLO BROASTER Y MUCHO MÁS</p>
+                <h1>Algo rico<br>te está esperando.</h1>
+                <p>Comida recién preparada, porciones para todos y ese sabor que siempre provoca.</p>
+            </div>
+            <p class="presentacion__pie">
+                Crujiente por fuera. Delicioso por dentro.
+            </p>
+        </section>
+        <section class="login__panel">
+            <div class="panel__contenido">
+                <div class="panel__marca-movil">🍗 EL BUEN SABOR</div>
+                <p class="etiqueta etiqueta--oscura">BIENVENIDO</p>
+                <h2>Ingresa a tu cuenta</h2>
+                <p class="panel__descripcion">
+                    Inicia sesión para revisar el menú y preparar tu pedido.
+                </p>
+                <form id="formLogin" novalidate>
+                    <label for="usuario">Usuario</label>
+                    <input
+                        type="text"
+                        id="usuario"
+                        name="usuario"
+                        placeholder="Escribe tu usuario"
+                        autocomplete="username"
+                        required
+                    >
+                    <label for="clave">Contraseña</label>
+                    <div class="campo-clave">
+                        <input
+                            type="password"
+                            id="clave"
+                            name="clave"
+                            placeholder="Escribe tu contraseña"
+                            autocomplete="current-password"
+                            required
+                        >
+                        <button type="button" id="verClave">
+                            Ver
+                        </button>
+                    </div>
+                    <p id="mensaje" class="mensaje" role="alert"></p>
+                    <button type="submit" class="boton-principal">
+                        Entrar al menú <span>→</span>
+                    </button>
+                </form>
+                <div class="datos-demo">
+                    <span class="datos-demo__icono">i</span>
+                    <p>
+                        <strong>Cuenta de prueba</strong><br>
+                        Usuario: cliente · Contraseña: 1234
+                    </p>
+                </div>
+            </div>
+            <footer class="login__footer">
+                © 2026 El Buen Sabor
+            </footer>
+        </section>
+    </main>
+    <script src="js/scriptlogin.js"></script>
+</body>
+</html>

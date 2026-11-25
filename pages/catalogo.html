@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#251b18">
+    <title>El Buen Sabor | Menú</title>
+    <link rel="stylesheet" href="../css/styleindex.css">
+</head>
+<body>
+
+    <header class="header">
+        <button id="btnMenu" class="boton-menu" type="button"
+            aria-label="Abrir menú" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <a href="#inicio" class="logo">
+            <span class="logo__icono">🍗</span>
+            <span>EL BUEN <b>SABOR</b></span>
+        </a>
+        <div class="header__acciones">
+            <span id="saludo" class="saludo"></span>
+            <a href="#pedido" class="enlace-pedido">
+                Mi pedido
+                <span id="contadorCarrito" class="contador-carrito">0</span>
+            </a>
+            <button id="btnSalir" class="boton-salir" type="button">
+                Salir
+            </button>
+        </div>
+    </header>
+    <div id="fondo" class="fondo" hidden></div>
+    <nav id="menuLateral" class="menu-lateral">
+        <button id="btnCerrar" class="cerrar-menu" type="button">×</button>
+        <p class="etiqueta etiqueta--oscura">EL BUEN SABOR</p>
+        <h2>¿Qué se te antoja?</h2>
+        <ul>
+            <li><a href="#catalogo" data-filtro="todos" class="activo">Todo el menú</a></li>
+            <li><a href="#catalogo" data-filtro="pollo">Pollo broaster</a></li>
+            <li><a href="#catalogo" data-filtro="combos">Combos</a></li>
+            <li><a href="#catalogo" data-filtro="acompanamientos">Acompañamientos</a></li>
+            <li><a href="#catalogo" data-filtro="bebidas">Bebidas</a></li>
+        </ul>
+        <div class="menu__nota">
+            Preparado al momento para disfrutar mejor.
+        </div>
+    </nav>
+    <main id="inicio" class="contenedor">
+        <section class="portada">
+            <div class="portada__texto">
+                <p class="etiqueta">SABOR QUE SE COMPARTE</p>
+                <h1>Hoy se come<br><em>delicioso.</em></h1>
+                <p>
+                    Elige tu comida favorita, escoge el tamaño
+                    y arma tu pedido a tu manera.
+                </p>
+                <a href="#catalogo" class="boton-portada">
+                    Explorar el menú <span>↓</span>
+                </a>
+            </div>
+            <div class="portada__foto"></div>
+            <div class="portada__sello">
+                <strong>100%</strong>
+                <span>ANTOJO<br>SATISFECHO</span>
+            </div>
+        </section>
+        <section id="catalogo" class="seccion-menu">
+            <div class="seccion__encabezado">
+                <div>
+                    <p class="etiqueta etiqueta--oscura">NUESTRO MENÚ</p>
+                    <h2>Elige algo rico</h2>
+                    <p class="texto-secundario">
+                        Encuentra tu favorito y agrégalo al pedido.
+                    </p>
+                </div>
+                <div class="buscador">
+                    <span>⌕</span>
+                    <inputid="buscador"type="search"placeholder="Buscar comida o bebida..."aria-label="Buscar productos">
+                </div>
+            </div>
+            <div class="filtros">
+                <button type="button" data-filtro="todos" class="filtro activo">Todo</button>
+                <button type="button" data-filtro="pollo" class="filtro">Pollo broaster</button>
+                <button type="button" data-filtro="combos" class="filtro">Combos</button>
+                <button type="button" data-filtro="acompanamientos" class="filtro">Acompañamientos</button>
+                <button type="button" data-filtro="bebidas" class="filtro">Bebidas</button>
+            </div>
+            <div class="catalogo__info">
+                <h3 id="tituloCategoria">Todo el menú</h3>
+                <p id="contadorProductos">8 productos</p>
+            </div>
+            <div id="productos" class="productos"></div>
+
+            <div id="sinResultados" class="sin-resultados" hidden>
+                <span>🍽️</span>
+                <h3>No encontramos ese producto</h3>
+                <p>Prueba con otro nombre o cambia la categoría.</p>
+            </div>
+        </section>
+        <section class="franja-info">
+            <span>🍟</span>
+            <p>
+                <strong>Hecho para disfrutar.</strong>
+                Escoge tu tamaño favorito y acompaña tu comida con algo para tomar.
+            </p>
+        </section>
+    </main>
+    <aside id="pedido" class="panel-pedido">
+        <div class="panel-pedido__interior">
+            <div class="pedido__encabezado">
+                <div>
+                    <p class="etiqueta etiqueta--oscura">TU SELECCIÓN</p>
+                    <h2>
+                        Mi pedido
+                        <span id="cantidadTitulo" class="cantidad-titulo">0</span>
+                    </h2>
+                </div>
+                <span class="pedido__icono">🛍️</span>
+            </div>
+            <p id="carritoVacio" class="carrito-vacio">
+                Todavía no agregaste productos. ¡Elige algo del menú!
+            </p>
+            <ul id="listaCarrito" class="lista-carrito"></ul>
+            <div class="pedido__totales">
+                <div>
+                    <span>Productos</span>
+                    <strong id="subtotalProductos">0</strong>
+                </div>
+                <div class="total-final">
+                    <span>Total</span>
+                    <strong id="total">Bs 0</strong>
+                </div>
+            </div>
+            <button id="btnFinalizar" class="boton-finalizar" type="button" disabled>
+                Revisar pedido →
+            </button>
+            <button id="btnVaciar" class="boton-vaciar" type="button" disabled>
+                Vaciar pedido
+            </button>
+            <p class="pedido__aclaracion">
+                El pedido es una demostración local; no se realiza ningún cobro.
+            </p>
+        </div>
+    </aside>
+    <footer class="footer">
+        <div class="footer__marca">🍗 EL BUEN SABOR</div>
+        <p>Comida rica para compartir.</p>
+        <p>© 2026 El Buen Sabor</p>
+    </footer>
+    <dialog id="modalPedido" class="modal-pedido">
+        <div class="modal__encabezado">
+            <p class="etiqueta etiqueta--oscura">ANTES DE CONTINUAR</p>
+            <button id="btnCerrarModal" class="modal__cerrar" type="button">×</button>
+        </div>
+        <h2>Revisa tu pedido</h2>
+        <p class="texto-secundario">
+            Comprueba que todo esté correcto antes de confirmar.
+        </p>
+        <ul id="resumenPedido" class="resumen-pedido"></ul>
+        <div class="resumen__total">
+            <span>Total a pagar</span>
+            <strong id="totalConfirmacion">Bs 0</strong>
+        </div>
+        <div class="modal__acciones">
+            <button id="btnConfirmar" class="boton-finalizar" type="button">
+                Confirmar pedido
+            </button>
+            <button id="btnSeguirComprando" class="boton-vaciar" type="button">
+                Seguir comprando
+            </button>
+        </div>
+        <p class="pedido__aclaracion">
+            Demostración: esta página no envía el pedido a un restaurante.
+        </p>
+    </dialog>
+    <div id="notificacion" class="notificacion" role="status"></div>
+    <script src="../js/scriptindex.js"></script>
+</body>
+</html>
